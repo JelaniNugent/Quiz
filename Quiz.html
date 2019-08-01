@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz Zone</title>
+<script type= "text/javascript">
+<!--
+	//An array that contains all the questions and their correct answers.
+	var quiz = [
+	["Question 1: What is my Hobby?","Watching and playing soccer."],
+	["Question 2: How many players are on a soccer team?", 11],
+	["Question 3: When was soccer invented?","mid-19th century"],
+	["Question 4: Was soccer invented in England?","Yes"],
+	["Question 5: Which is an international soccer team?","Germany"]
+	];
+   
+   /* This program is a quiz that opens a new window with the users results. 
+    This Program was done By Jelani Nugent   */
+  function multipleChoice(quiz) {
+  
+    //The counter for score and the correct questions.
+	var score = 0;
+	var correct1 = 0;
+	var correct2 = 0;
+	var correct3 = 0;
+	var correct4 = 0;
+	var correct5 = 0;
+
+	//Opens new Window.
+	var results = window.open("","results","Width = 300, Height = 300");
+	
+	//assigns correct answers to variable.
+   var radioButton1 = (document.getElementById("radiobuttonQuestion1.1").value); 
+	var radioButton2 = (document.getElementById("radiobuttonQuestion2.3").value);
+	var radioButton3 = (document.getElementById("radiobuttonQuestion3.2").value); 
+	var radioButton4 = (document.getElementById("radiobuttonQuestion4.1").value); 
+	var radioButton5 = (document.getElementById("radiobuttonQuestion5.2").value); 
+	
+	
+	//This check if the answers are right and increments scores and values when the answer is true.
+	if (document.getElementById("radiobuttonQuestion1.1").checked === true) {
+		score++;
+		correct1++;
+    }
+	
+	if (document.getElementById("radiobuttonQuestion2.3").checked === true) {
+		score++;
+		correct2++;
+	}	
+	
+	if (document.getElementById("radiobuttonQuestion3.2").checked === true) {
+		score++;
+		correct3++;
+	}
+	
+	if (document.getElementById("radiobuttonQuestion4.1").checked === true) {
+		score++;
+		correct4++;
+	}
+	
+	if (document.getElementById("radiobuttonQuestion5.2").checked === true) {
+		score++;
+		correct5++;
+	}
+	
+	//Prints results to the new window.
+	results.document.write("Your final score is " + score + " out of 5.<br>");
+	results.document.write("Your percentage score is " + score*100/5 + "%." );
+	
+	/*These if statements are used to track which questions are wrong and if they
+	are the wrong questions will be displayed in the new window.*/
+	var quizInfo = quiz;
+	if (correct1 == 0 ) {
+	results.document.write("<br></br> " + quiz[0][0] + "<br> Answer: " + quiz[0][1]);
+	}
+	
+	if (correct2 == 0 ) {
+	results.document.write("<br></br> " + quiz[1][0] + "<br> Answer: " + quiz[1][1]);
+	}
+	
+	if (correct3 == 0 ) {
+	results.document.write("<br></br> " + quiz[2][0] + "<br> Answer: " + quiz[2][1]);
+	}
+	
+	if (correct4 == 0 ) {
+	results.document.write("<br></br> " + quiz[3][0] + "<br> Answer: " + quiz[3][1]);
+	}
+	
+	if (correct5 == 0 ) {
+	results.document.write("<br></br> " + quiz[4][0] + "<br> Answer: " + quiz[4][1]);
+	}
+	}
+		
+//-->
+
+<style> 
+</script>
+</head>
+<h2>Jelani's Hobby Quiz</h2>
+</hr>
+<body>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  
+  background-image: url("germany.png");
+
+  height: 100%; 
+  width:  100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  }
+</style>
+ 
+  <p>My hobby is watching and playing soccer.<br> My favorite international team is Germany and my favorite club team is barcelona.<br> Soccer was invented in the mid-19th century in the country of england.<br>
+   This is a game where each team has 11 players.<br> Soccer is a sport that is now played by many countries and Some international teams are: Germany, France, Argentina, etc.
+   <br><strong>Rules of soccer: </strong><br>A match consists of two 45 minutes halves with a 15 minute rest period in between.<br>
+   The ball must have a circumference of 58-61cm and be of a circular shape.<br>If teams are still level after extra time then a penalty shootout must take place.</p>
+	
+	
+<p>Question 1: What is my Hobby?</p>
+<form>
+<input id= "radiobuttonQuestion1.1" type="radio" name= "group1" value="Soccer">Watching and playing soccer.<br>
+<input id= "radiobuttonQuestion1.2" type="radio" name= "group1" value="Golf">Watching and playing golf.<br>
+<input id= "radiobuttonQuestion1.3" type="radio" name= "group1" value="Basketball">Watching and playing basketball.<br>
+<input id= "radiobuttonQuestion1.4" type="radio" name= "group1" value="Hockey">Watching and playing hockey.<br>
+
+<p>Question 2: How many players are on a soccer team?</p>
+<input id= "radiobuttonQuestion2.1" type="radio" name= "group2" value="12">12<br>
+<input id= "radiobuttonQuestion2.2" type="radio" name= "group2" value="5">5<br>
+<input id= "radiobuttonQuestion2.3" type="radio" name= "group2" value="11">11<br>
+<input id= "radiobuttonQuestion2.4" type="radio" name= "group2" value="15">15<br>
+
+<p>Question 3: When was soccer invented?</p>
+<input id= "radiobuttonQuestion3.1" type="radio" name= "group3" value="mid-16th century">mid-16th century<br>
+<input id= "radiobuttonQuestion3.2" type="radio" name= "group3" value="mid-19th century">mid-19th century<br>
+<input id= "radiobuttonQuestion3.3" type="radio" name= "group3" value="mid-17th century">mid-17th century<br>
+<input id= "radiobuttonQuestion3.4" type="radio" name= "group3" value="mid-15th century">mid-15th century<br>
+
+<p>Question 4: Was soccer invented in England?</p>
+<input id= "radiobuttonQuestion4.1" type="radio" name= "group4" value="Yes">Yes<br>
+<input id= "radiobuttonQuestion4.2" type="radio" name= "group4" value="No">No<br>
+
+<p>Question 5: Which is an international soccer team?</p>
+<input id= "radiobuttonQuestion5.1" type="radio" name= "group5" value="Real Madrid">Real Madrid<br>
+<input id= "radiobuttonQuestion5.2" type="radio" name= "group5" value="Germany">Germany<br>
+<input id= "radiobuttonQuestion5.3" type="radio" name= "group5" value="Manchester City">Manchester City<br>
+<input id= "radiobuttonQuestion5.4" type="radio" name= "group5" value="France">Manchester United<br></br>
+ 
+<button onclick = "multipleChoice(quiz)">Submit</button> 
+</form>
+</body>
+</html>
+	
